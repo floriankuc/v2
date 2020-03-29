@@ -17,6 +17,12 @@ import RobotoMedium from '../fonts/Roboto/Roboto-Medium.ttf'
 import RobotoBold from '../fonts/Roboto/Roboto-Bold.ttf'
 import RobotoBlack from '../fonts/Roboto/Roboto-Black.ttf'
 
+import RubikLight from '../fonts/Rubik/Rubik-Light.ttf'
+import RubikRegular from '../fonts/Rubik/Rubik-Regular.ttf'
+import RubikMedium from '../fonts/Rubik/Rubik-Medium.ttf'
+import RubikBold from '../fonts/Rubik/Rubik-Bold.ttf'
+import RubikBlack from '../fonts/Rubik/Rubik-Black.ttf'
+
 const FontFaces = css`
   @font-face {
     font-family: 'Montserrat';
@@ -119,6 +125,41 @@ const FontFaces = css`
   @font-face {
     font-family: 'Roboto';
     src: url(${RobotoBlack});
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Rubik';
+    src: url(${RubikLight});
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Rubik';
+    src: url(${RubikRegular});
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Rubik';
+    src: url(${RubikMedium});
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Rubik';
+    src: url(${RubikBold});
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Rubik';
+    src: url(${RubikBlack});
     font-weight: 900;
     font-style: normal;
   }

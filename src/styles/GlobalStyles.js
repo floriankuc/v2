@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
-import colors from './colors'
+import theme from './theme'
 import FontFaces from './fonts'
+const { colors, margins, fontSizes } = theme
 
 const GlobalStyles = createGlobalStyle`
   ${FontFaces}
@@ -22,8 +23,9 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     background-color: ${colors.black};
     color: ${colors.white};
-    font-family: Roboto;
+    font-family: Rubik;
     font-weight: 300;
+    font-size: ${fontSizes.lg};
 
     &.hidden {
       overflow: hidden;
@@ -31,56 +33,70 @@ const GlobalStyles = createGlobalStyle`
 
     &.blur {
       overflow: hidden;
-
-      #root > #content > * {
-        filter: blur(5px) brightness(0.7);
-        pointer-events: none;
-        user-select: none;
-      }
     }
   }
 
-  /* #root {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    grid-template-columns: 100%;
-  } */
-
-  h1 {
-    font-size: 72px;
-    font-weight: 500;
-    font-family: Montserrat;    
+  h1, h3 {
+    font-size: 70px;
+    font-weight: 400;
   }
 
   h2 {
-    color: ${colors.white};
     font-weight: 900;
     font-family: Montserrat;   
     font-size: 160px;
   }
 
-  p, li {
+  p, li{
     line-height: 1.6;
-    letter-spacing: .5px;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+
+    &:after{
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 102%;
+      background: transparent;
+      border-bottom: 1px dashed white;
+
+    }
   }
 
   ul {
     list-style: none;
   }
 
-  svg {
-    width: 100%;
-    height: 100%;
-    fill: currentColor;
-    vertical-align: middle;
+  a:focus,
+  a:active {
+    outline: none;
   }
-/* 
-  .main {
-    width: calc(100% - 96px);
-    height: calc(100vh - 72px);
-    padding: 120px;
-  } */
+
+  .nav-wrapper {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    top: 0;
+    left: 100%;
+    background-color: ${colors.black};
+    z-index: -1;
+    
+
+    nav {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `
 
 export default GlobalStyles

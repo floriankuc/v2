@@ -1,20 +1,21 @@
 import React from 'react'
-import Image from '../components/image'
-import { Link } from 'gatsby'
 import styled from 'styled-components/macro'
 import Button from '../components/common/Button'
+import theme from '../styles/theme'
+const { paddings, margins } = theme
 
 const About = () => {
   return (
     <AboutContainer>
       <LeftWrapper>
-        <HeadlineMain>
-          Hi. Ich bin Florian. Web Developer aus Hamburg.
-        </HeadlineMain>
-        {/* <div style={{ maxWidth: `400px` }}>
-          <Image />
-        </div> */}
-        <Button text={'Schreib mir'} />
+        <Column>
+          <HeadlineMain>
+            Hi. Ich bin Florian. Web Developer aus Hamburg.
+          </HeadlineMain>
+          <a href="#contact" style={{ marginLeft: margins.md }}>
+            <Button text={'Schreib mir'} />
+          </a>
+        </Column>
       </LeftWrapper>
       <HeadlineWrapper>
         <HeadlineAbout>about</HeadlineAbout>
@@ -23,32 +24,36 @@ const About = () => {
   )
 }
 
+const Column = styled.div`
+  height: 100%;
+  display: inline-block;
+`
+
 const AboutContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 200px;
   grid-template-rows: calc(100vh - 140px);
-  padding-left: 100px;
+  padding-left: ${paddings.lg};
 `
 
 const LeftWrapper = styled.div`
-  background: pink;
+  display: flex;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 `
 
 const HeadlineMain = styled.h1`
   width: 700px;
-  margin-bottom: 150px;
+  margin-bottom: ${margins.lg};
 `
 
 const HeadlineWrapper = styled.div`
-  background: red;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
 `
 
 const HeadlineAbout = styled.h2`
-  margin-top: 100px;
+  margin-top: ${margins.md};
   transform: rotateZ(90deg);
 `
 
