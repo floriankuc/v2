@@ -1,7 +1,7 @@
 ---
 title: 'Caligoals'
 description: 'Prototyp eines mobile Goaltrackers mit Datenvisualisierungen für Calisthenics-Sportler'
-link:
+link: 'https://github.com/floriankuc/CapstoneCaliGoals'
 ---
 
 - Node.js

@@ -2,7 +2,8 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components/macro'
 import theme from '../styles/theme'
-const { paddings, fontSizes } = theme
+import { FaExternalLinkAlt } from 'react-icons/fa'
+const { paddings, colors, fontSizes } = theme
 
 const Work = () => {
   const data = useStaticQuery(graphql`
@@ -13,6 +14,7 @@ const Work = () => {
             frontmatter {
               title
               description
+              link
             }
             html
           }
@@ -23,7 +25,7 @@ const Work = () => {
 
   return (
     <>
-      <WorkContainer>
+      <WorkContainer id="work">
         <LeftWrapper>
           <HeadlineAbout>work</HeadlineAbout>
         </LeftWrapper>
@@ -31,6 +33,14 @@ const Work = () => {
           {data.allMarkdownRemark.edges.map(edge => {
             return (
               <ProjectContainer>
+                <a
+                  href={edge.node.frontmatter.link}
+                  target="_blank"
+                  className="link-icon"
+                >
+                  <FaExternalLinkAlt />
+                </a>
+
                 <StyledTitle>{edge.node.frontmatter.title}</StyledTitle>
                 <p>{edge.node.frontmatter.description}</p>
                 <div dangerouslySetInnerHTML={{ __html: edge.node.html }}></div>
@@ -56,14 +66,27 @@ const ProjectContainer = styled.section`
   border: ${theme.borderWhite};
   border-radius: ${theme.borderRadius};
   padding: ${paddings.sm};
-  cursor: pointer;
   transition: all 0.15s ${theme.easing};
   position: relative;
   font-size: ${fontSizes.sm};
 
   &:hover {
-    cursor: pointer;
     transform: translateY(-10px);
+
+    .link-icon {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  .link-icon {
+    opacity: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: ${fontSizes.lg};
+    transition: opacity 0.1s ${theme.easing};
+    color: ${colors.white};
   }
 `
 

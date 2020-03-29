@@ -14,6 +14,7 @@ const theme = {
     md: '18px',
     lg: '20px',
     xl: '40px',
+    headline: '70px',
   },
 
   easing: 'cubic-bezier(0, 0, 0.5, 1)',

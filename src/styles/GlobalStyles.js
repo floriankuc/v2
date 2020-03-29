@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import theme from './theme'
 import FontFaces from './fonts'
-const { colors, margins, fontSizes } = theme
+const { colors, fontSizes } = theme
 
 const GlobalStyles = createGlobalStyle`
   ${FontFaces}
@@ -37,7 +37,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h1, h3 {
-    font-size: 70px;
+    font-size: ${fontSizes.headline};
     font-weight: 400;
   }
 
@@ -60,12 +60,10 @@ const GlobalStyles = createGlobalStyle`
       position: absolute;
       content: '';
       left: 0;
-      top: 0;
+      bottom: 0;
       width: 100%;
-      height: 102%;
       background: transparent;
       border-bottom: 1px dashed white;
-
     }
   }
 
