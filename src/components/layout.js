@@ -5,7 +5,6 @@ import Header from './header'
 import GlobalStyles from '../styles/GlobalStyles'
 
 const Layout = ({ children }) => {
-  require('smooth-scroll')('a[href*="#"]')
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
