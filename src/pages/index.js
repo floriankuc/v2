@@ -1,18 +1,18 @@
 import React from 'react'
-
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Footer from '../components/footer'
 import About from '../components/about'
 import Contact from '../components/contact'
+import Work from '../components/work'
+import Techstack from '../components/techstack'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Web Developer" />
     <About />
-    {/* <Work/> */}
-    {/* <Contact />  */}
-    {/* <Footer /> */}
+    <Techstack />
+    <Work />
+    <Contact />
   </Layout>
 )
 

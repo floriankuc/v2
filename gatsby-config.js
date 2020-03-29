@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Florian Kuc`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Florian Kuc | Web Developer`,
     author: `Florian Kuc`,
   },
   plugins: [
@@ -9,6 +9,8 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-smoothscroll`,
+    `gatsby-plugin-scroll-reveal`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
