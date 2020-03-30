@@ -25,6 +25,8 @@ const Contact = () => {
 const StyledContactText = styled.p`
   text-align: center;
   width: 400px;
+  font-size: 26px;
+
 
   @media all and (max-width: ${media.md}) {
     font-size: ${fontSizes.lg};

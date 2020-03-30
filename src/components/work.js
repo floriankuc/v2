@@ -54,8 +54,9 @@ const Work = () => {
 }
 
 const StyledTitle = styled.p`
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 50px;
+  font-size: 20px;
 
   @media all and (max-width: ${media.lg}) {
     margin: 0;
@@ -73,6 +74,10 @@ const ProjectContainer = styled.section`
   transition: all 0.15s ${theme.easing};
   position: relative;
   font-size: ${fontSizes.sm};
+  backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+
 
   @media all and (max-width: ${media.lg}) {
     grid-template-columns: 100%;

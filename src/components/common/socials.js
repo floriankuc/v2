@@ -43,6 +43,10 @@ const StyledNav = styled.nav`
     margin: 0 10px;
     transition: all 0.1s ${theme.easing};
     color: ${colors.white};
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+
 
     &:hover,
     &:active {

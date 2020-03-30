@@ -22,6 +22,9 @@ const StyledButton = styled.button`
   border-radius: 1px;
   transform-style: preserve-3d;
   transition: all 0.1s ${theme.easing};
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
 
   @media all and (max-width: ${media.xl}) {
     padding: 12px 24px;

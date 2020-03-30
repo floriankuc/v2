@@ -78,6 +78,7 @@ const StyledTechstackText = styled.p`
   width: 100%;
   padding-left: ${paddings.sm};
   margin-bottom: ${margins.md};
+  font-size: 26px;
 
   @media all and (max-width: ${media.md}) {
     margin-bottom: 50px;

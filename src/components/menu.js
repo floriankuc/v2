@@ -21,10 +21,14 @@ const Menu = ({ isToggled, setIsToggled }) => {
 
 const StyledLink = styled.a`
   color: ${colors.black};
-  font-size: ${fontSizes.lg};
+  font-size: 26px;
   text-decoration: none;
-  transition: all 0.2s ${theme.easing};
-  font-weight: 400;
+  transition: all 0.1s ${theme.easing};
+  font-weight: 300;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+
 
   @media all and (max-width: ${media.sm}) {
     font-size: ${fontSizes.xl};
@@ -51,6 +55,11 @@ const StyledNav = styled.nav`
   right: -600px;
   height: 60px;
   transition: right 0.3s ${theme.easing};
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+
+
 
   @media all and (max-width: ${media.md}) {
     width: 100%;

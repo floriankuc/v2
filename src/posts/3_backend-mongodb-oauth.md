@@ -1,6 +1,6 @@
 ---
-title: 'mongodb-oauth-setup'
-description: 'Vollständiges Boilerplate setup mit mongodb-Server und OAuth'
+title: 'mongodb-oauth'
+description: 'Vollständiges setup mit mongodb-Server und OAuth (Passport.js)'
 link: 'https://github.com/floriankuc/backend-mongodb-oauth'
 ---
 

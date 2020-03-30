@@ -13,6 +13,8 @@ const GlobalStyles = createGlobalStyle`
       padding: 0;
       margin: 0;
       scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   }
 
   body {

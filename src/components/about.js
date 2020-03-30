@@ -43,6 +43,10 @@ const AboutContainer = styled.section`
   grid-template-rows: calc(100vh - 140px);
   padding-left: ${paddings.lg};
 
+  @media all and (min-width: ${media.xxl}) {
+    padding-left: 400px;
+  }
+
   @media all and (max-width: ${media.xxl}) {
     padding-left: ${paddings.md};
   }
@@ -75,6 +79,10 @@ const LeftWrapper = styled.div`
 const HeadlineMain = styled.h1`
   width: 700px;
   margin-bottom: ${margins.lg};
+
+  @media all and (min-width: ${media.xxl}) {
+    padding-top: ${paddings.md};
+  }
 
   @media all and (max-width: ${media.xl}) {
     width: 500px;
