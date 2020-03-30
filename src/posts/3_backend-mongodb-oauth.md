@@ -1,5 +1,5 @@
 ---
-title: 'mongodb-oauth-boilerplate'
+title: 'mongodb-oauth-setup'
 description: 'Vollständiges Boilerplate setup mit mongodb-Server und OAuth'
 link: 'https://github.com/floriankuc/backend-mongodb-oauth'
 ---

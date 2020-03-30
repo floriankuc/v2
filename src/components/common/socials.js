@@ -2,7 +2,7 @@ import React from 'react'
 import { FaXingSquare, FaLinkedin, FaGithubSquare } from 'react-icons/fa'
 import styled from 'styled-components/macro'
 import theme from '../../styles/theme'
-const { colors } = theme
+const { colors, media } = theme
 
 const Socials = () => {
   return (
@@ -24,6 +24,17 @@ const StyledNav = styled.nav`
   position: absolute;
   bottom: 30px;
   left: 30px;
+
+  @media all and (max-width: ${media.xxl}) {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  @media all and (max-width: ${media.sm}) {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+  }
 
   .icon {
     cursor: pointer;

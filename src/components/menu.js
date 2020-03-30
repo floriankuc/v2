@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import theme from '../styles/theme'
-const { colors, paddings, fontSizes } = theme
+const { colors, paddings, fontSizes, media } = theme
 
 const Menu = ({ isToggled, setIsToggled }) => {
   return (
@@ -26,6 +26,13 @@ const StyledLink = styled.a`
   transition: all 0.2s ${theme.easing};
   font-weight: 400;
 
+  @media all and (max-width: ${media.sm}) {
+    font-size: ${fontSizes.xl};
+    font-family: Montserrat;
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
+
   &:hover {
     transform: translateY(-4px);
   }
@@ -45,8 +52,32 @@ const StyledNav = styled.nav`
   height: 60px;
   transition: right 0.3s ${theme.easing};
 
+  @media all and (max-width: ${media.md}) {
+    width: 100%;
+    top: 0;
+    right: -100%;
+    height: 80px;
+  }
+
+  @media all and (max-width: ${media.sm}) {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: ${paddings.md} 0;
+  }
+
   &.toggled {
     right: 24px;
+
+    @media all and (max-width: ${media.md}) {
+      right: 0;
+    }
+
+    @media all and (max-width: ${media.sm}) {
+      right: 0;
+      height: 100%;
+    }
   }
 `
 

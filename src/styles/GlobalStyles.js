@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import theme from './theme'
 import FontFaces from './fonts'
-const { colors, fontSizes } = theme
+const { colors, fontSizes, media } = theme
 
 const GlobalStyles = createGlobalStyle`
   ${FontFaces}
@@ -27,25 +27,40 @@ const GlobalStyles = createGlobalStyle`
     font-family: Rubik;
     font-weight: 300;
     font-size: ${fontSizes.lg};
-
-    &.hidden {
-      overflow: hidden;
-    }
-
-    &.blur {
-      overflow: hidden;
-    }
   }
 
   h1, h3 {
     font-size: ${fontSizes.headline};
     font-weight: 400;
+
+    @media all and (max-width: ${media.xl}) {
+      font-size: 60px;
+    }
+
+    @media all and (max-width: ${media.lg}) {
+    font-size: 50px;
+  }
+
+  @media all and (max-width: ${media.md}) {
+    font-size: 40px;
+  }
+  @media all and (max-width: ${media.md}) {
+    font-size: 34px;
+  }
   }
 
   h2 {
     font-weight: 900;
     font-family: Montserrat;   
     font-size: 160px;
+
+    @media all and (max-width: ${media.xl}) {
+    font-size: 140px;
+  }
+
+  @media all and (max-width: ${media.lg}) {
+    font-size: 110px;
+  }
   }
 
   p, li{

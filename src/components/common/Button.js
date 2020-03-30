@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import theme from '../../styles/theme'
-const { colors, fontSizes } = theme
+const { colors, fontSizes, media } = theme
 
 const Button = ({ text }) => {
   return <StyledButton>{text}</StyledButton>
@@ -22,6 +22,10 @@ const StyledButton = styled.button`
   border-radius: 1px;
   transform-style: preserve-3d;
   transition: all 0.1s ${theme.easing};
+
+  @media all and (max-width: ${media.xl}) {
+    padding: 12px 24px;
+  }
 
   &:before {
     content: '';

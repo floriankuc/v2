@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components/macro'
 import theme from '../styles/theme'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-const { paddings, colors, fontSizes } = theme
+const { paddings, colors, margins, fontSizes, media } = theme
 
 const Work = () => {
   const data = useStaticQuery(graphql`
@@ -56,6 +56,10 @@ const Work = () => {
 const StyledTitle = styled.p`
   font-weight: 500;
   margin-bottom: 50px;
+
+  @media all and (max-width: ${media.lg}) {
+    margin: 0;
+  }
 `
 
 const ProjectContainer = styled.section`
@@ -70,8 +74,18 @@ const ProjectContainer = styled.section`
   position: relative;
   font-size: ${fontSizes.sm};
 
+  @media all and (max-width: ${media.lg}) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+
   &:hover {
     transform: translateY(-10px);
+
+    @media all and (max-width: ${media.lg}) {
+      transform: translateX(10px);
+    }
 
     .link-icon {
       opacity: 1;
@@ -87,6 +101,11 @@ const ProjectContainer = styled.section`
     font-size: ${fontSizes.lg};
     transition: opacity 0.1s ${theme.easing};
     color: ${colors.white};
+
+    @media all and (max-width: ${media.lg}) {
+      opacity: 1;
+      font-size: ${fontSizes.xl};
+    }
   }
 `
 
@@ -95,6 +114,18 @@ const WorkContainer = styled.section`
   grid-template-columns: 200px 1fr;
   grid-template-rows: 100vh;
   padding-right: ${paddings.md};
+
+  @media all and (max-width: ${media.md}) {
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 1fr;
+    padding-left: 100px;
+  }
+
+  @media all and (max-width: ${media.sm}) {
+    font-size: 26px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 `
 
 const LeftWrapper = styled.div`
@@ -110,11 +141,31 @@ const RightWrapper = styled.div`
   grid-template-rows: 310px 310px;
   grid-gap: 40px;
   margin: auto;
+
+  @media all and (max-width: ${media.lg}) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 200px);
+    grid-gap: 20px;
+  }
+
+  @media all and (max-width: ${media.sm}) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 250px);
+    grid-gap: 20px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+  }
 `
 
 const HeadlineAbout = styled.h2`
   margin-top: 500px;
   transform: rotateZ(-90deg);
+
+  @media all and (max-width: ${media.md}) {
+    font-size: ${fontSizes.xl};
+    transform: none;
+    margin: 0;
+  }
 `
 
 export default Work
