@@ -12,9 +12,9 @@ const About = () => {
           <HeadlineMain>
             Hi. Ich bin Florian. Web Developer aus Hamburg.
           </HeadlineMain>
-          <a href="#contact" style={{ marginLeft: margins.md }}>
+          <StyledLink href="#contact">
             <Button text={'Schreib mir'} />
-          </a>
+          </StyledLink>
         </Column>
       </LeftWrapper>
       <HeadlineWrapper>
@@ -27,6 +27,14 @@ const About = () => {
 const Column = styled.div`
   height: 100%;
   display: inline-block;
+`
+
+const StyledLink = styled.a`
+  margin-left: ${margins.md};
+
+  @media all and (max-width: ${media.xs}) {
+    margin-left: 50px;
+  }
 `
 
 const AboutContainer = styled.section`
@@ -74,6 +82,11 @@ const HeadlineMain = styled.h1`
 
   @media all and (max-width: ${media.lg}) {
     width: 400px;
+  }
+
+  @media all and (max-width: ${media.sm}) {
+    width: 90%;
+    margin-bottom: ${margins.md};
   }
 `
 

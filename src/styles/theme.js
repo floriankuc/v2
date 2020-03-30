@@ -15,8 +15,7 @@ const theme = {
     lg: '768px',
     md: '600px',
     sm: '480px',
-    xs: 376,
-    xxs: 330,
+    xs: '376px',
   },
 
   fontSizes: {

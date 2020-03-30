@@ -4,7 +4,7 @@ import Socials from '../components/common/socials'
 import theme from '../styles/theme'
 const { margins, paddings, media, fontSizes } = theme
 
-const About = () => {
+const Contact = () => {
   return (
     <ContactContainer>
       <LeftWrapper>
@@ -29,6 +29,10 @@ const StyledContactText = styled.p`
   @media all and (max-width: ${media.md}) {
     font-size: ${fontSizes.lg};
   }
+
+  @media all and (max-width: ${media.xs}) {
+    width: 80%;
+  }
 `
 
 const StyledEmail = styled.h3`
@@ -36,6 +40,9 @@ const StyledEmail = styled.h3`
 
   @media all and (max-width: ${media.lg}) {
     font-size: 36px;
+  }
+  @media all and (max-width: ${media.xs}) {
+    font-size: 28px;
   }
 `
 
@@ -57,6 +64,11 @@ const ContactContainer = styled.section`
     grid-template-rows: 100px 500px;
     margin-top: ${margins.lg};
     padding-left: 0;
+  }
+
+  @media all and (max-width: ${media.xs}) {
+    height: 600px;
+    grid-template-rows: 100px 400px;
   }
 `
 
@@ -102,4 +114,4 @@ const HeadlineContact = styled.h2`
   }
 `
 
-export default About
+export default Contact

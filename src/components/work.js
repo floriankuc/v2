@@ -134,8 +134,8 @@ const LeftWrapper = styled.div`
 `
 
 const RightWrapper = styled.div`
-  grid-column: 1 / 2;
-  grid-row: 2 / 2;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
   display: grid;
   grid-template-columns: 310px 310px;
   grid-template-rows: 310px 310px;
@@ -152,6 +152,8 @@ const RightWrapper = styled.div`
     grid-template-columns: 100%;
     grid-template-rows: repeat(4, 250px);
     grid-gap: 20px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
   }
 `
 

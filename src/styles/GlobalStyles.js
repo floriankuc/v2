@@ -44,6 +44,9 @@ const GlobalStyles = createGlobalStyle`
   @media all and (max-width: ${media.md}) {
     font-size: 40px;
   }
+  @media all and (max-width: ${media.md}) {
+    font-size: 34px;
+  }
   }
 
   h2 {

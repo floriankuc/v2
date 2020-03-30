@@ -66,7 +66,11 @@ const ContentWrapper = styled.div`
   }
   @media all and (max-width: ${media.sm}) {
     width: 450px;
-    /* display: block; */
+  }
+
+  @media all and (max-width: ${media.sm}) {
+    width: 90%;
+    display: block;
   }
 `
 
@@ -99,6 +103,7 @@ const TechItem = styled.p`
   }
   @media all and (max-width: ${media.sm}) {
     font-size: 26px;
+    margin: 0 ${margins.sm};
   }
 `
 
