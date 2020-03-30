@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import theme from '../styles/theme'
-const { colors, paddings, fontSizes } = theme
+const { colors, paddings, fontSizes, media } = theme
 
 const Menu = ({ isToggled, setIsToggled }) => {
   return (
@@ -45,8 +45,19 @@ const StyledNav = styled.nav`
   height: 60px;
   transition: right 0.3s ${theme.easing};
 
+  @media all and (max-width: ${media.md}) {
+    width: 100%;
+    top: 0;
+    right: -100%;
+    height: 80px;
+  }
+
   &.toggled {
     right: 24px;
+
+    @media all and (max-width: ${media.md}) {
+      right: 0;
+    }
   }
 `
 

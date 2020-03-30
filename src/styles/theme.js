@@ -9,6 +9,16 @@ const theme = {
     white: '#fff',
   },
 
+  media: {
+    xxl: '1200px',
+    xl: '1000px',
+    lg: '768px',
+    md: '600px',
+    sm: '480px',
+    xs: 376,
+    xxs: 330,
+  },
+
   fontSizes: {
     sm: '16px',
     md: '18px',

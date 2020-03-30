@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Menu from './menu'
 import styled from 'styled-components/macro'
 import theme from '../styles/theme'
-const { colors } = theme
+const { colors, media, margins, paddings, fontSizes } = theme
 
 const Header = () => {
   const [isToggled, setIsToggled] = useState(false)
@@ -12,14 +12,23 @@ const Header = () => {
   }
 
   return (
-    <header id="about" style={{ height: 140, width: '100%' }}>
+    <StyledHeader id="about" style={{ height: 140, width: '100%' }}>
       <Menu isToggled={isToggled} setIsToggled={setIsToggled} />
       <MenuButton onClick={toggleHandler}>
         <div className={isToggled ? 'open' : 'closed'}></div>
       </MenuButton>
-    </header>
+    </StyledHeader>
   )
 }
+
+const StyledHeader = styled.header`
+  height: 140px;
+  width: 100%;
+
+  @media all and (max-width: ${media.md}) {
+    height: 100px;
+  }
+`
 
 const MenuButton = styled.div`
   position: fixed;
