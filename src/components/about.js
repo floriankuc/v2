@@ -1,24 +1,40 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
+import { TweenLite, Power3, TimelineLite } from 'gsap'
+
 import styled from 'styled-components/macro'
 import Button from '../components/common/Button'
 import theme from '../styles/theme'
 const { paddings, margins, media, fontSizes } = theme
 
+
 const About = () => {
+
+  const headline = useRef()
+  const button = useRef()
+  const sideline = useRef()
+
+  const tl = new TimelineLite
+
+  useEffect(() => {
+    TweenLite.from(sideline.current, 1, { opacity: 0, y: 500, ease: Power3.easeOut })
+    TweenLite.from(headline.current, 1, { opacity: 0, x: -200, ease: Power3.easeOut, delay: .5 })
+    TweenLite.from(button.current, { opacity: 0, duration: 1, ease: Power3.easeOut, delay: 1.2 })
+  }, [])
+
   return (
     <AboutContainer>
       <LeftWrapper>
         <Column>
-          <HeadlineMain>
+          <HeadlineMain ref={headline} style={{ opacity: 1 }}>
             Hi. Ich bin Florian. Web Developer aus Hamburg.
           </HeadlineMain>
-          <StyledLink href="#contact">
+          <StyledLink href="#contact" ref={button} >
             <Button text={'Schreib mir'} />
           </StyledLink>
         </Column>
       </LeftWrapper>
-      <HeadlineWrapper>
-        <HeadlineAbout>about</HeadlineAbout>
+      <HeadlineWrapper >
+        <HeadlineAbout ref={sideline}>about</HeadlineAbout>
       </HeadlineWrapper>
     </AboutContainer>
   )

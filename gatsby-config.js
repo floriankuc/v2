@@ -9,8 +9,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-smoothscroll`,
-    `gatsby-plugin-scroll-reveal`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
