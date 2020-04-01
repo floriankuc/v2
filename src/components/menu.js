@@ -28,6 +28,21 @@ const StyledLink = styled.a`
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
+  font-weight: 900;
+  font-family: Montserrat;
+  font-size: 100px;
+  position: relative;
+
+  &:before{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 10px;
+    background: ${colors.black};
+    bottom: 0;
+    left: 0;
+    transition: width .3s ${theme.easing};
+  }
 
 
   @media all and (max-width: ${media.sm}) {
@@ -38,7 +53,11 @@ const StyledLink = styled.a`
   }
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateX(20px);
+
+    &:before{
+      width: 100%;
+    }
   }
 `
 
@@ -46,14 +65,20 @@ const StyledNav = styled.nav`
   background: ${colors.white};
   z-index: 1;
   display: flex;
-  width: 600px;
+  flex-direction: column;
+  font-family: Montserrat;
+  /* width: 600px; */
+  width: 100%;
   padding-right: ${paddings.md};
   justify-content: space-around;
   align-items: center;
   position: fixed;
-  top: 10px;
-  right: -600px;
-  height: 60px;
+  /* top: 10px; */
+  top: 0;
+  /* right: -600px; */
+  right: -100%;
+  /* height: 60px; */
+  height: 100%;
   transition: right 0.3s ${theme.easing};
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -77,7 +102,8 @@ const StyledNav = styled.nav`
   }
 
   &.toggled {
-    right: 24px;
+    /* right: 24px; */
+    right: 0;
 
     @media all and (max-width: ${media.md}) {
       right: 0;

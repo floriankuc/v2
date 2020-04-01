@@ -1,9 +1,35 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import theme from '../styles/theme'
+import ScrollMagic from "scrollmagic"
+import { TweenMax, TimelineMax, Power3, TweenLite, TimelineLite } from "gsap"
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+
+
 const { paddings, fontSizes, margins, media } = theme
 
 const Techstack = () => {
+  ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+
+  const techs = useRef()
+  const trigger = useRef()
+
+  let controller = new ScrollMagic.Controller()
+
+  useEffect(() => {
+    const techitems = techs.current.children
+    const tl = new TimelineMax
+    for (let i = 0; i < techitems.length; i++) {
+      new ScrollMagic.Scene({
+        triggerElement: techitems[i],
+        triggerHook: .9,
+        reverse: false
+      })
+        .setTween(TweenLite.from(techitems[i], 1, { opacity: 0, x: -300, ease: Power3.easeOut }))
+        .addTo(controller)
+    }
+  }, [])
+
   const stack = [
     'Javascript ES6/2020',
     'React',
@@ -20,8 +46,8 @@ const Techstack = () => {
   ]
 
   return (
-    <TechstackContainer>
-      <ContentWrapper>
+    <TechstackContainer ref={trigger} id="trigger">
+      <ContentWrapper ref={techs}>
         <StyledTechstackText>
           Ich baue Webseiten und Apps, am liebsten mit:
         </StyledTechstackText>

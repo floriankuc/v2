@@ -1,22 +1,49 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components/macro'
 import Socials from '../components/common/socials'
 import theme from '../styles/theme'
+import ScrollMagic from "scrollmagic";
+import { TweenMax, TimelineMax, Power3 } from "gsap";
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 const { margins, paddings, media, fontSizes } = theme
 
 const Contact = () => {
+  ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+
+  const contactHeadline = useRef()
+  const text = useRef()
+  const email = useRef()
+
+  let controller = new ScrollMagic.Controller()
+
+
+  useEffect(() => {
+    const tl = new TimelineMax()
+    tl.from(contactHeadline.current, 1, { opacity: 0, y: 500, ease: Power3.easeOut })
+    tl.to(text.current, 1, { opacity: 1, ease: Power3.easeOut, delay: -0.8 })
+    tl.to(email.current, 1, { opacity: 1, ease: Power3.easeOut, delay: -0.8 })
+    tl.to(email.current, .2, { scale: 1.1, ease: Power3.easeOut, })
+    tl.to(email.current, .5, { scale: 1, ease: Power3.easeOut, })
+    new ScrollMagic.Scene({
+      triggerElement: '#triggercontact',
+      reverse: false
+    })
+      .setTween(tl)
+      .addTo(controller)
+  }, [])
+
   return (
-    <ContactContainer>
+    <ContactContainer id='triggercontact'>
       <LeftWrapper>
-        <StyledContactText>
+        <StyledContactText style={{ opacity: 0 }} ref={text}>
           Ich freue mich über deine Nachricht zu einem potenziellen, zukünftigen
           Projekt oder ein freundliches hallo. :-)
         </StyledContactText>
-        <StyledEmail id="contact">florian.kuc at gmail.com</StyledEmail>
+        <StyledEmail style={{ opacity: 0 }} ref={email} id="contact">florian.kuc at gmail.com</StyledEmail>
       </LeftWrapper>
       <Socials />
-      <HeadlineWrapper>
-        <HeadlineContact>contact</HeadlineContact>
+      <HeadlineWrapper >
+        <HeadlineContact ref={contactHeadline}>contact</HeadlineContact>
       </HeadlineWrapper>
     </ContactContainer>
   )
@@ -39,6 +66,10 @@ const StyledContactText = styled.p`
 
 const StyledEmail = styled.h3`
   margin-top: -${margins.md};
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
 
   @media all and (max-width: ${media.lg}) {
     font-size: 36px;
