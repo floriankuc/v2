@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import theme from '../styles/theme'
-import sr from '../utils/sr'
-import { srConfigTechs } from '../utils/config'
+// import sr from '../utils/sr'
+// import { srConfigTechs } from '../utils/config'
 
 const { paddings, fontSizes, margins, media } = theme
 
@@ -10,11 +10,11 @@ const Techstack = () => {
 
   const revealTechs = useRef();
 
-  useEffect(() => {
-    sr.reveal(revealTechs.current, srConfigTechs());
-    const items = Array.from(revealTechs.current.children)
-    items.forEach((el, i) => sr.reveal(el, srConfigTechs(i * 50)));
-  }, []);
+  // useEffect(() => {
+  //   sr.reveal(revealTechs.current, srConfigTechs());
+  //   const items = Array.from(revealTechs.current.children)
+  //   items.forEach((el, i) => sr.reveal(el, srConfigTechs(i * 50)));
+  // }, []);
 
   const stack = [
     'Javascript ES6/2020',
