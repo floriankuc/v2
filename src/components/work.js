@@ -12,11 +12,11 @@ const Work = () => {
   const revealProject = useRef(null);
   const revealWork = useRef(null)
 
-  useEffect(() => {
-    sr.reveal(revealWork.current, srConfigWork())
-    const items = Array.from(revealProject.current.children)
-    items.forEach((el, i) => sr.reveal(el, srConfigProject(i * 140)));
-  }, []);
+  // useEffect(() => {
+  //   sr.reveal(revealWork.current, srConfigWork())
+  //   const items = Array.from(revealProject.current.children)
+  //   items.forEach((el, i) => sr.reveal(el, srConfigProject(i * 140)));
+  // }, []);
 
   const data = useStaticQuery(graphql`
     query {
