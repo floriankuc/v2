@@ -32,9 +32,9 @@ const Work = () => {
   const trigger = useRef()
   const projectitems = useRef()
 
-  let controller = new ScrollMagic.Controller()
 
   useEffect(() => {
+    let controller = new ScrollMagic.Controller()
     const projects = projectitems.current.children
     const tl = new TimelineMax
     for (let i = 0; i < projects.length; i++) {

@@ -13,8 +13,6 @@ const About = () => {
   const button = useRef()
   const sideline = useRef()
 
-  const tl = new TimelineLite
-
   useEffect(() => {
     TweenLite.from(sideline.current, 1, { opacity: 0, y: 500, ease: Power3.easeOut })
     TweenLite.from(headline.current, 1, { opacity: 0, x: -200, ease: Power3.easeOut, delay: .5 })

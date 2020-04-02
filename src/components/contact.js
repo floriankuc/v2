@@ -8,16 +8,16 @@ import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 const { margins, paddings, media, fontSizes } = theme
 
 const Contact = () => {
+
   ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
   const contactHeadline = useRef()
   const text = useRef()
   const email = useRef()
 
-  let controller = new ScrollMagic.Controller()
-
-
   useEffect(() => {
+
+    let controller = new ScrollMagic.Controller()
     const tl = new TimelineMax()
     tl.from(contactHeadline.current, 1, { opacity: 0, y: 500, ease: Power3.easeOut })
     tl.to(text.current, 1, { opacity: 1, ease: Power3.easeOut, delay: -0.8 })
