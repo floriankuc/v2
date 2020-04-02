@@ -27,7 +27,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             module: {
                 rules: [
                     {
-                        test: /node_modules\/scrollmagic\/scrollmagic/,
+                        test: /node_modules\/scrollmagic\/scrollmagic\/uncompressed/,
                         use: loaders.null(),
                     },
                 ],
