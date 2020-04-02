@@ -2,35 +2,35 @@ import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components/macro'
 import Socials from '../components/common/socials'
 import theme from '../styles/theme'
-import ScrollMagic from "scrollmagic";
-import { TweenMax, TimelineMax, Power3 } from "gsap";
-import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+// import ScrollMagic from "scrollmagic";
+// import { TweenMax, TimelineMax, Power3 } from "gsap";
+// import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 const { margins, paddings, media, fontSizes } = theme
 
 const Contact = () => {
 
-  ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+  // ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
   const contactHeadline = useRef()
   const text = useRef()
   const email = useRef()
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    let controller = new ScrollMagic.Controller()
-    const tl = new TimelineMax()
-    tl.from(contactHeadline.current, 1, { opacity: 0, y: 500, ease: Power3.easeOut })
-    tl.to(text.current, 1, { opacity: 1, ease: Power3.easeOut, delay: -0.8 })
-    tl.to(email.current, 1, { opacity: 1, ease: Power3.easeOut, delay: -0.8 })
-    tl.to(email.current, .2, { scale: 1.1, ease: Power3.easeOut, })
-    tl.to(email.current, .5, { scale: 1, ease: Power3.easeOut, })
-    new ScrollMagic.Scene({
-      triggerElement: '#triggercontact',
-      reverse: false
-    })
-      .setTween(tl)
-      .addTo(controller)
-  }, [])
+  //   let controller = new ScrollMagic.Controller()
+  //   const tl = new TimelineMax()
+  //   tl.from(contactHeadline.current, 1, { opacity: 0, y: 500, ease: Power3.easeOut })
+  //   tl.to(text.current, 1, { opacity: 1, ease: Power3.easeOut, delay: -0.8 })
+  //   tl.to(email.current, 1, { opacity: 1, ease: Power3.easeOut, delay: -0.8 })
+  //   tl.to(email.current, .2, { scale: 1.1, ease: Power3.easeOut, })
+  //   tl.to(email.current, .5, { scale: 1, ease: Power3.easeOut, })
+  //   new ScrollMagic.Scene({
+  //     triggerElement: '#triggercontact',
+  //     reverse: false
+  //   })
+  //     .setTween(tl)
+  //     .addTo(controller)
+  // }, [])
 
   if (typeof window !== 'undefined') {
     return (

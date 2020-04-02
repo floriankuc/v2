@@ -13,9 +13,9 @@ const IndexPage = () => (
       <Layout>
         <SEO title="Web Developer" />
         <About />
-        {/* <Techstack /> */}
-        {/* <Work /> */}
-        {/* <Contact /> */}
+        <Techstack />
+        <Work />
+        <Contact />
       </Layout>
     ) : null}
   </>
