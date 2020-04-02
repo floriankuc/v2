@@ -23,13 +23,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {(typeof window !== 'undefined') ? (
-        <>
-          <GlobalStyles />
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <main>{children}</main>
-        </>
-      ) : null}
+      {/* {(typeof window !== 'undefined') ? ( */}
+      <>
+        <GlobalStyles />
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <main>{children}</main>
+      </>
     </>
   )
 }

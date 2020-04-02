@@ -8,13 +8,17 @@ import Techstack from '../components/techstack'
 
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Web Developer" />
-    <About />
-    <Techstack />
-    <Work />
-    <Contact />
-  </Layout>
+  <>
+    {(typeof window !== 'undefined') ? (
+      <Layout>
+        <SEO title="Web Developer" />
+        <About />
+        <Techstack />
+        <Work />
+        <Contact />
+      </Layout>
+    ) : null}
+  </>
 )
 
 export default IndexPage
