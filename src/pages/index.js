@@ -9,6 +9,7 @@ import Techstack from '../components/techstack'
 
 if (typeof window !== 'undefined') {
   require('scrollmagic')
+  require('gsap')
   require('scrollmagic-plugin-gsap')
 }
 
