@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import theme from '../styles/theme'
 import ScrollMagic from "scrollmagic"
 import { TweenMax, TimelineMax, Power3, TweenLite, TimelineLite } from "gsap"
-import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap"
 
 
 const { paddings, fontSizes, margins, media } = theme
