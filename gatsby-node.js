@@ -30,6 +30,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
                         test: /scrollmagic/,
                         use: loaders.null(),
                     },
+                    {
+                        test: /scrollreveal/,
+                        use: loaders.null(),
+                    },
                 ],
             },
         })

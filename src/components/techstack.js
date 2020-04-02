@@ -1,34 +1,37 @@
 import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import theme from '../styles/theme'
-import ScrollMagic from "scrollmagic"
-import { TweenMax, TimelineMax, Power3, TweenLite, TimelineLite } from "gsap"
-import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
-
+// import ScrollMagic from "scrollmagic"
+// import { TweenMax, TimelineMax, Power3, TweenLite, TimelineLite } from "gsap"
+// import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+import sr from '../utils/sr'
+import { srConfig } from '../utils/config'
 
 const { paddings, fontSizes, margins, media } = theme
-ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+// ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
 const Techstack = () => {
 
+  const revealContainer = useRef(null);
+  useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
   const techs = useRef()
   const trigger = useRef()
 
 
-  useEffect(() => {
-    let controller = new ScrollMagic.Controller()
-    const techitems = techs.current.children
-    const tl = new TimelineMax
-    for (let i = 0; i < techitems.length; i++) {
-      new ScrollMagic.Scene({
-        triggerElement: techitems[i],
-        triggerHook: .9,
-        reverse: false
-      })
-        .setTween(TweenLite.from(techitems[i], 1, { opacity: 0, x: -300, ease: Power3.easeOut }))
-        .addTo(controller)
-    }
-  }, [])
+  // useEffect(() => {
+  //   let controller = new ScrollMagic.Controller()
+  //   const techitems = techs.current.children
+  //   const tl = new TimelineMax
+  //   for (let i = 0; i < techitems.length; i++) {
+  //     new ScrollMagic.Scene({
+  //       triggerElement: techitems[i],
+  //       triggerHook: .9,
+  //       reverse: false
+  //     })
+  //       .setTween(TweenLite.from(techitems[i], 1, { opacity: 0, x: -300, ease: Power3.easeOut }))
+  //       .addTo(controller)
+  //   }
+  // }, [])
 
   const stack = [
     'Javascript ES6/2020',
@@ -46,7 +49,8 @@ const Techstack = () => {
   ]
 
   return (
-    <TechstackContainer ref={trigger} id="trigger">
+    // <TechstackContainer ref={trigger} id="trigger">
+    <TechstackContainer ref={revealContainer} id="trigger">
       <ContentWrapper ref={techs}>
         <StyledTechstackText>
           Ich baue Webseiten und Apps, am liebsten mit:
