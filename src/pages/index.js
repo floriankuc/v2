@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import About from '../components/about'
@@ -7,6 +7,8 @@ import Work from '../components/work'
 import Techstack from '../components/techstack'
 
 const IndexPage = () => (
+
+
   <Layout>
     <SEO title="Web Developer" />
     <About />

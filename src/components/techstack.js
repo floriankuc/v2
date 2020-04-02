@@ -14,9 +14,9 @@ const Techstack = () => {
   const techs = useRef()
   const trigger = useRef()
 
-  let controller = new ScrollMagic.Controller()
 
   useEffect(() => {
+    let controller = new ScrollMagic.Controller()
     const techitems = techs.current.children
     const tl = new TimelineMax
     for (let i = 0; i < techitems.length; i++) {
