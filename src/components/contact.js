@@ -2,48 +2,34 @@ import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components/macro'
 import Socials from '../components/common/socials'
 import theme from '../styles/theme'
-// import ScrollMagic from "scrollmagic";
-// import { TweenMax, TimelineMax, Power3 } from "gsap";
-// import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+import sr from '../utils/sr'
+import { srConfigContact, srConfigContactText, srConfigContactEmail } from '../utils/config'
 const { margins, paddings, media, fontSizes } = theme
 
 const Contact = () => {
 
-  // ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+  const revealContact = useRef(null);
+  const revealContactText = useRef(null)
+  const revealContactEmail = useRef(null)
 
-  const contactHeadline = useRef()
-  const text = useRef()
-  const email = useRef()
-
-  // useEffect(() => {
-
-  //   let controller = new ScrollMagic.Controller()
-  //   const tl = new TimelineMax()
-  //   tl.from(contactHeadline.current, 1, { opacity: 0, y: 500, ease: Power3.easeOut })
-  //   tl.to(text.current, 1, { opacity: 1, ease: Power3.easeOut, delay: -0.8 })
-  //   tl.to(email.current, 1, { opacity: 1, ease: Power3.easeOut, delay: -0.8 })
-  //   tl.to(email.current, .2, { scale: 1.1, ease: Power3.easeOut, })
-  //   tl.to(email.current, .5, { scale: 1, ease: Power3.easeOut, })
-  //   new ScrollMagic.Scene({
-  //     triggerElement: '#triggercontact',
-  //     reverse: false
-  //   })
-  //     .setTween(tl)
-  //     .addTo(controller)
-  // }, [])
+  useEffect(() => {
+    sr.reveal(revealContact.current, srConfigContact())
+    sr.reveal(revealContactText.current, srConfigContactText())
+    sr.reveal(revealContactEmail.current, srConfigContactEmail())
+  }, []);
 
   return (
     <ContactContainer id='triggercontact'>
       <LeftWrapper>
-        <StyledContactText style={{ opacity: 0 }} ref={text}>
+        <StyledContactText ref={revealContactText}>
           Ich freue mich über deine Nachricht zu einem potenziellen, zukünftigen
           Projekt oder ein freundliches hallo. :-)
         </StyledContactText>
-        <StyledEmail style={{ opacity: 0 }} ref={email} id="contact">florian.kuc at gmail.com</StyledEmail>
+        <StyledEmail ref={revealContactEmail} id="contact">florian.kuc at gmail.com</StyledEmail>
       </LeftWrapper>
       <Socials />
       <HeadlineWrapper >
-        <HeadlineContact ref={contactHeadline}>contact</HeadlineContact>
+        <HeadlineContact ref={revealContact}>contact</HeadlineContact>
       </HeadlineWrapper>
     </ContactContainer>
   )
