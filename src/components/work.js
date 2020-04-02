@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components/macro'
 import theme from '../styles/theme'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 
-import ScrollMagic from "scrollmagic";
+// import ScrollMagic from "scrollmagic";
 // import { TweenMax, TimelineMax, Power3, TweenLite, TimelineLite } from "gsap";
 // import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
@@ -34,57 +34,59 @@ const Work = () => {
   const trigger = useRef()
   const projectitems = useRef()
 
+  // const [module, setModule] = useState('')
 
-  // useEffect(() => {
-  //   let controller = new ScrollMagic.Controller()
-  //   const projects = projectitems.current.children
-  //   const tl = new TimelineMax
-  //   for (let i = 0; i < projects.length; i++) {
-  //     new ScrollMagic.Scene({
-  //       triggerElement: projects[i],
-  //       triggerHook: .75,
-  //       reverse: false
-  //     })
-  //       .setTween(TweenLite.from(projects[i], 1, { opacity: 0, x: 300, ease: Power3.easeOut }))
-  //       .addTo(controller)
-  //   }
-  //   new ScrollMagic.Scene({
-  //     triggerElement: '#work'
-  //   })
-  //     .setTween(TweenLite.from(sideline.current, 1, { opacity: 0, y: 500, ease: Power3.easeOut }))
-  //     .addTo(controller)
-  // }, [])
+  useEffect(() => {
+    // import ScrollMagic from "scrollmagic"
+    //   let controller = new ScrollMagic.Controller()
+    //   const projects = projectitems.current.children
+    //   const tl = new TimelineMax
+    //   for (let i = 0; i < projects.length; i++) {
+    //     new ScrollMagic.Scene({
+    //       triggerElement: projects[i],
+    //       triggerHook: .75,
+    //       reverse: false
+    //     })
+    //       .setTween(TweenLite.from(projects[i], 1, { opacity: 0, x: 300, ease: Power3.easeOut }))
+    //       .addTo(controller)
+    //   }
+    //   new ScrollMagic.Scene({
+    //     triggerElement: '#work'
+    //   })
+    //     .setTween(TweenLite.from(sideline.current, 1, { opacity: 0, y: 500, ease: Power3.easeOut }))
+    //     .addTo(controller)
+  }, [])
 
-  if (typeof window !== 'undefined') {
-    return (
-      <>
-        <WorkContainer id="work" ref={trigger}>
-          <LeftWrapper >
-            <HeadlineAbout ref={sideline}>work</HeadlineAbout>
-          </LeftWrapper>
-          <RightWrapper ref={projectitems}>
-            {data.allMarkdownRemark.edges.map(edge => {
-              return (
-                <ProjectContainer>
-                  <a
-                    href={edge.node.frontmatter.link}
-                    target="_blank"
-                    className="link-icon"
-                  >
-                    <FaExternalLinkAlt />
-                  </a>
+  // if (typeof window !== 'undefined') {
+  return (
+    <>
+      <WorkContainer id="work" ref={trigger}>
+        <LeftWrapper >
+          <HeadlineAbout ref={sideline}>work</HeadlineAbout>
+        </LeftWrapper>
+        <RightWrapper ref={projectitems}>
+          {data.allMarkdownRemark.edges.map(edge => {
+            return (
+              <ProjectContainer>
+                <a
+                  href={edge.node.frontmatter.link}
+                  target="_blank"
+                  className="link-icon"
+                >
+                  <FaExternalLinkAlt />
+                </a>
 
-                  <StyledTitle>{edge.node.frontmatter.title}</StyledTitle>
-                  <p>{edge.node.frontmatter.description}</p>
-                  <div dangerouslySetInnerHTML={{ __html: edge.node.html }}></div>
-                </ProjectContainer>
-              )
-            })}
-          </RightWrapper>
-        </WorkContainer>
-      </>
-    )
-  }
+                <StyledTitle>{edge.node.frontmatter.title}</StyledTitle>
+                <p>{edge.node.frontmatter.description}</p>
+                <div dangerouslySetInnerHTML={{ __html: edge.node.html }}></div>
+              </ProjectContainer>
+            )
+          })}
+        </RightWrapper>
+      </WorkContainer>
+    </>
+  )
+  // }
 }
 
 const StyledTitle = styled.p`
