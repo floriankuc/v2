@@ -6,10 +6,10 @@ import GlobalStyles from '../styles/GlobalStyles'
 
 const Layout = ({ children }) => {
 
-  if (typeof window !== 'undefined') {
-    // eslint-disable-next-line global-require
-    require('scrollmagic')('a[href*="#"]');
-  }
+  // if (typeof window !== 'undefined') {
+  //   // eslint-disable-next-line global-require
+  //   require('scrollmagic')('a[href*="#"]');
+  // }
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -23,9 +23,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyles />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      {(typeof window !== 'undefined') ? (
+        <>
+          <GlobalStyles />
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <main>{children}</main>
+        </>
+      ) : null}
     </>
   )
 }
