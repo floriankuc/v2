@@ -32,21 +32,23 @@ const Contact = () => {
       .addTo(controller)
   }, [])
 
-  return (
-    <ContactContainer id='triggercontact'>
-      <LeftWrapper>
-        <StyledContactText style={{ opacity: 0 }} ref={text}>
-          Ich freue mich über deine Nachricht zu einem potenziellen, zukünftigen
-          Projekt oder ein freundliches hallo. :-)
+  if (typeof window !== 'undefined') {
+    return (
+      <ContactContainer id='triggercontact'>
+        <LeftWrapper>
+          <StyledContactText style={{ opacity: 0 }} ref={text}>
+            Ich freue mich über deine Nachricht zu einem potenziellen, zukünftigen
+            Projekt oder ein freundliches hallo. :-)
         </StyledContactText>
-        <StyledEmail style={{ opacity: 0 }} ref={email} id="contact">florian.kuc at gmail.com</StyledEmail>
-      </LeftWrapper>
-      <Socials />
-      <HeadlineWrapper >
-        <HeadlineContact ref={contactHeadline}>contact</HeadlineContact>
-      </HeadlineWrapper>
-    </ContactContainer>
-  )
+          <StyledEmail style={{ opacity: 0 }} ref={email} id="contact">florian.kuc at gmail.com</StyledEmail>
+        </LeftWrapper>
+        <Socials />
+        <HeadlineWrapper >
+          <HeadlineContact ref={contactHeadline}>contact</HeadlineContact>
+        </HeadlineWrapper>
+      </ContactContainer>
+    )
+  }
 }
 
 const StyledContactText = styled.p`

@@ -45,18 +45,20 @@ const Techstack = () => {
     'Cypress',
   ]
 
-  return (
-    <TechstackContainer ref={trigger} id="trigger">
-      <ContentWrapper ref={techs}>
-        <StyledTechstackText>
-          Ich baue Webseiten und Apps, am liebsten mit:
+  if (typeof window !== 'undefined') {
+    return (
+      <TechstackContainer ref={trigger} id="trigger">
+        <ContentWrapper ref={techs}>
+          <StyledTechstackText>
+            Ich baue Webseiten und Apps, am liebsten mit:
         </StyledTechstackText>
-        {stack.map(el => {
-          return <TechItem>{el}</TechItem>
-        })}
-      </ContentWrapper>
-    </TechstackContainer>
-  )
+          {stack.map(el => {
+            return <TechItem>{el}</TechItem>
+          })}
+        </ContentWrapper>
+      </TechstackContainer>
+    )
+  }
 }
 
 const TechstackContainer = styled.section`

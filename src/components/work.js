@@ -53,34 +53,36 @@ const Work = () => {
       .addTo(controller)
   }, [])
 
-  return (
-    <>
-      <WorkContainer id="work" ref={trigger}>
-        <LeftWrapper >
-          <HeadlineAbout ref={sideline}>work</HeadlineAbout>
-        </LeftWrapper>
-        <RightWrapper ref={projectitems}>
-          {data.allMarkdownRemark.edges.map(edge => {
-            return (
-              <ProjectContainer>
-                <a
-                  href={edge.node.frontmatter.link}
-                  target="_blank"
-                  className="link-icon"
-                >
-                  <FaExternalLinkAlt />
-                </a>
+  if (typeof window !== 'undefined') {
+    return (
+      <>
+        <WorkContainer id="work" ref={trigger}>
+          <LeftWrapper >
+            <HeadlineAbout ref={sideline}>work</HeadlineAbout>
+          </LeftWrapper>
+          <RightWrapper ref={projectitems}>
+            {data.allMarkdownRemark.edges.map(edge => {
+              return (
+                <ProjectContainer>
+                  <a
+                    href={edge.node.frontmatter.link}
+                    target="_blank"
+                    className="link-icon"
+                  >
+                    <FaExternalLinkAlt />
+                  </a>
 
-                <StyledTitle>{edge.node.frontmatter.title}</StyledTitle>
-                <p>{edge.node.frontmatter.description}</p>
-                <div dangerouslySetInnerHTML={{ __html: edge.node.html }}></div>
-              </ProjectContainer>
-            )
-          })}
-        </RightWrapper>
-      </WorkContainer>
-    </>
-  )
+                  <StyledTitle>{edge.node.frontmatter.title}</StyledTitle>
+                  <p>{edge.node.frontmatter.description}</p>
+                  <div dangerouslySetInnerHTML={{ __html: edge.node.html }}></div>
+                </ProjectContainer>
+              )
+            })}
+          </RightWrapper>
+        </WorkContainer>
+      </>
+    )
+  }
 }
 
 const StyledTitle = styled.p`
