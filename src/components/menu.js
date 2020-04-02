@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import theme from '../styles/theme'
+
 const { colors, paddings, fontSizes, media } = theme
 
 const Menu = ({ isToggled, setIsToggled }) => {
@@ -32,16 +33,17 @@ const StyledLink = styled.a`
   font-family: Montserrat;
   font-size: 100px;
   position: relative;
+  transition: all .2s cubic-bezier(.81,.12,.4,.7);
 
   &:before{
     content: '';
     position: absolute;
     width: 0px;
-    height: 10px;
+    height: 8px;
     background: ${colors.black};
     bottom: 0;
     left: 0;
-    transition: width .3s ${theme.easing};
+    transition: width .2s cubic-bezier(.81,.12,.4,.7);
   }
 
 
@@ -67,19 +69,15 @@ const StyledNav = styled.nav`
   display: flex;
   flex-direction: column;
   font-family: Montserrat;
-  /* width: 600px; */
   width: 100%;
   padding-right: ${paddings.md};
   justify-content: space-around;
   align-items: center;
   position: fixed;
-  /* top: 10px; */
   top: 0;
-  /* right: -600px; */
   right: -100%;
-  /* height: 60px; */
   height: 100%;
-  transition: right 0.3s ${theme.easing};
+  transition: right 0.4s cubic-bezier(.81,.12,.4,.7);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
@@ -102,7 +100,6 @@ const StyledNav = styled.nav`
   }
 
   &.toggled {
-    /* right: 24px; */
     right: 0;
 
     @media all and (max-width: ${media.md}) {

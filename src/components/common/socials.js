@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FaXingSquare, FaLinkedin, FaGithubSquare } from 'react-icons/fa'
 import styled from 'styled-components/macro'
 import theme from '../../styles/theme'
+import sr from '../../utils/sr'
+import { srConfigSocials } from '../../utils/config'
 const { colors, media } = theme
 
 const Socials = () => {
+
+  const revealSocials = useRef(null)
+
+  useEffect(() => {
+    const items = Array.from(revealSocials.current.children)
+    items.forEach((el, i) => sr.reveal(el, srConfigSocials(i * 300)));
+  }, [])
+
   return (
-    <StyledNav>
+    <StyledNav ref={revealSocials}>
       <a href="https://www.xing.com/profile/Florian_Kuc" target="_blank">
         <FaXingSquare className="icon" />
       </a>

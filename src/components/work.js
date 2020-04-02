@@ -3,12 +3,21 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components/macro'
 import theme from '../styles/theme'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-// import ScrollMagic from "scrollmagic";
-// import { TweenMax, TimelineMax, Power3, TweenLite, TimelineLite } from "gsap";
-// import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+import sr from '../utils/sr'
+import { srConfigWork, srConfigProject } from '../utils/config'
 const { paddings, colors, margins, fontSizes, media } = theme
 
 const Work = () => {
+
+  const revealProject = useRef(null);
+  const revealWork = useRef(null)
+
+  useEffect(() => {
+    sr.reveal(revealWork.current, srConfigWork())
+    const items = Array.from(revealProject.current.children)
+    items.forEach((el, i) => sr.reveal(el, srConfigProject(i * 140)));
+  }, []);
+
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -26,40 +35,14 @@ const Work = () => {
     }
   `)
 
-  // ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
-
-  const sideline = useRef()
-  const trigger = useRef()
-  const projectitems = useRef()
-
-
-  // useEffect(() => {
-  //   let controller = new ScrollMagic.Controller()
-  //   const projects = projectitems.current.children
-  //   const tl = new TimelineMax
-  //   for (let i = 0; i < projects.length; i++) {
-  //     new ScrollMagic.Scene({
-  //       triggerElement: projects[i],
-  //       triggerHook: .75,
-  //       reverse: false
-  //     })
-  //       .setTween(TweenLite.from(projects[i], 1, { opacity: 0, x: 300, ease: Power3.easeOut }))
-  //       .addTo(controller)
-  //   }
-  //   new ScrollMagic.Scene({
-  //     triggerElement: '#work'
-  //   })
-  //     .setTween(TweenLite.from(sideline.current, 1, { opacity: 0, y: 500, ease: Power3.easeOut }))
-  //     .addTo(controller)
-  // }, [])
 
   return (
     <>
-      <WorkContainer id="work" ref={trigger}>
+      <WorkContainer id="work">
         <LeftWrapper >
-          <HeadlineAbout ref={sideline}>work</HeadlineAbout>
+          <HeadlineAbout ref={revealWork}>work</HeadlineAbout>
         </LeftWrapper>
-        <RightWrapper ref={projectitems}>
+        <RightWrapper ref={revealProject}>
           {data.allMarkdownRemark.edges.map(edge => {
             return (
               <ProjectContainer>

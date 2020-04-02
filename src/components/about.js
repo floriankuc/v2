@@ -1,38 +1,38 @@
 import React, { useRef, useEffect } from 'react'
-import { TweenLite, Power3, TimelineLite } from 'gsap'
-
 import styled from 'styled-components/macro'
 import Button from '../components/common/Button'
 import theme from '../styles/theme'
+import sr from '../utils/sr'
+import { srConfigButton, srConfigAboutText, srConfigAbout } from '../utils/config'
 const { paddings, margins, media, fontSizes } = theme
 
 
 const About = () => {
 
-  const headline = useRef()
-  const button = useRef()
-  const sideline = useRef()
+  const revealAboutText = useRef(null);
+  const revealAbout = useRef(null)
+  const revealButton = useRef(null)
 
   useEffect(() => {
-    TweenLite.from(sideline.current, 1, { opacity: 0, y: 500, ease: Power3.easeOut })
-    TweenLite.from(headline.current, 1, { opacity: 0, x: -200, ease: Power3.easeOut, delay: .5 })
-    TweenLite.from(button.current, { opacity: 0, duration: 1, ease: Power3.easeOut, delay: 1.2 })
+    sr.reveal(revealAbout.current, srConfigAbout())
+    sr.reveal(revealAboutText.current, srConfigAboutText())
+    sr.reveal(revealButton.current, srConfigButton())
   }, [])
 
   return (
     <AboutContainer>
       <LeftWrapper>
         <Column>
-          <HeadlineMain ref={headline} style={{ opacity: 1 }}>
+          <HeadlineMain ref={revealAboutText}>
             Hi. Ich bin Florian. Web Developer aus Hamburg.
           </HeadlineMain>
-          <StyledLink href="#contact" ref={button} >
+          <StyledLink ref={revealButton} href="#contact" >
             <Button text={'Schreib mir'} />
           </StyledLink>
         </Column>
       </LeftWrapper>
       <HeadlineWrapper >
-        <HeadlineAbout ref={sideline}>about</HeadlineAbout>
+        <HeadlineAbout ref={revealAbout}>about</HeadlineAbout>
       </HeadlineWrapper>
     </AboutContainer>
   )
