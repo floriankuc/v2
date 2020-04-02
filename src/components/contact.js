@@ -9,7 +9,7 @@ const { margins, paddings, media, fontSizes } = theme
 
 const Contact = () => {
 
-  ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+  // ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
   const contactHeadline = useRef()
   const text = useRef()

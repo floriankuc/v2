@@ -26,7 +26,7 @@ const Work = () => {
     }
   `)
 
-  ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+  // ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
   const sideline = useRef()
   const trigger = useRef()
