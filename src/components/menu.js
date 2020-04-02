@@ -46,7 +46,6 @@ const StyledLink = styled.a`
     transition: width .2s cubic-bezier(.81,.12,.4,.7);
   }
 
-
   @media all and (max-width: ${media.sm}) {
     font-size: ${fontSizes.xl};
     font-family: Montserrat;
