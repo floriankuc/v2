@@ -7,7 +7,13 @@ import Work from '../components/work'
 import Techstack from '../components/techstack'
 
 
+if (typeof window !== 'undefined') {
+  require('scrollmagic')
+  require('scrollmagic-plugin-gsap')
+}
+
 const IndexPage = () => (
+
   <>
     {(typeof window !== 'undefined') ? (
       <Layout>
