@@ -6,9 +6,8 @@ import Contact from '../components/contact'
 import Work from '../components/work'
 import Techstack from '../components/techstack'
 
+
 const IndexPage = () => (
-
-
   <Layout>
     <SEO title="Web Developer" />
     <About />
