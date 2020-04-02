@@ -9,7 +9,7 @@ import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 const { paddings, fontSizes, margins, media } = theme
 
 const Techstack = () => {
-  ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+  // ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
   const techs = useRef()
   const trigger = useRef()
