@@ -10,10 +10,10 @@ const Socials = () => {
 
   const revealSocials = useRef(null)
 
-  useEffect(() => {
-    const items = Array.from(revealSocials.current.children)
-    items.forEach((el, i) => sr.reveal(el, srConfigSocials(i * 300)));
-  }, [])
+  // useEffect(() => {
+  //   const items = Array.from(revealSocials.current.children)
+  //   items.forEach((el, i) => sr.reveal(el, srConfigSocials(i * 300)));
+  // }, [])
 
   return (
     <StyledNav ref={revealSocials}>
