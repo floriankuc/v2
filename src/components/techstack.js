@@ -10,11 +10,11 @@ const Techstack = () => {
 
   const revealTechs = useRef();
 
-  useEffect(() => {
-    sr.reveal(revealTechs.current, srConfigTechs());
-    const items = Array.from(revealTechs.current.children)
-    items.forEach((el, i) => sr.reveal(el, srConfigTechs(i * 50)));
-  }, []);
+  // useEffect(() => {
+  //   sr.reveal(revealTechs.current, srConfigTechs());
+  //   const items = Array.from(revealTechs.current.children)
+  //   items.forEach((el, i) => sr.reveal(el, srConfigTechs(i * 50)));
+  // }, []);
 
   const stack = [
     'Javascript ES6/2020',
