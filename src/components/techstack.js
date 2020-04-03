@@ -95,6 +95,10 @@ const StyledTechstackText = styled.p`
   @media all and (max-width: ${media.md}) {
     margin-bottom: 50px;
   }
+
+  @media all and (max-width: ${media.xxs}) {
+    font-size: ${fontSizes.lg};
+  }
 `
 
 const TechItem = styled.p`

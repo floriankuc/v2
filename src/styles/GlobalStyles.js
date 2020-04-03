@@ -82,6 +82,11 @@ const GlobalStyles = createGlobalStyle`
       width: 100%;
       background: transparent;
       border-bottom: 1px dashed white;
+
+      
+  @media all and (max-width: ${media.xxs}) {
+    border: none;
+  }
     }
   }
 

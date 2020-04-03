@@ -49,6 +49,10 @@ const StyledLink = styled.a`
   @media all and (max-width: ${media.xs}) {
     margin-left: 50px;
   }
+
+  @media all and (max-width: ${media.xxs}) {
+    margin-left: 0;
+  }
 `
 
 const AboutContainer = styled.section`
@@ -110,6 +114,8 @@ const HeadlineMain = styled.h1`
     width: 90%;
     margin-bottom: ${margins.md};
   }
+
+
 `
 
 const HeadlineWrapper = styled.div`
