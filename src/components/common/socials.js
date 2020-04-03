@@ -57,6 +57,9 @@ const StyledNav = styled.nav`
     -webkit-backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
 
+    @media all and (max-width: ${media.xxs}) {
+     margin: 0 4px;
+  }
 
     &:hover,
     &:active {
