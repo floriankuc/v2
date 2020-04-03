@@ -43,8 +43,8 @@ module.exports = {
     }),
 
     srConfigTechs: (delay = 0) => ({
-        origin: 'left',
-        distance: '200px',
+        // origin: 'left',
+        // distance: '200px',
         duration: 800,
         delay,
         rotate: { x: 0, y: 0, z: 0 },
@@ -59,8 +59,8 @@ module.exports = {
     }),
 
     srConfigWork: (delay = 0) => ({
-        origin: 'right',
-        distance: '300px',
+        // origin: 'right',
+        // distance: '300px',
         duration: 500,
         delay,
         rotate: { x: 0, y: 0, z: 0 },
@@ -74,8 +74,8 @@ module.exports = {
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
     srConfigProject: (delay = 300) => ({
-        origin: 'bottom',
-        distance: '200px',
+        // origin: 'bottom',
+        // distance: '200px',
         duration: 500,
         delay,
         rotate: { x: 0, y: 0, z: 0 },
@@ -91,8 +91,8 @@ module.exports = {
 
 
     srConfigContact: (delay = 500) => ({
-        origin: 'right',
-        distance: '300px',
+        // origin: 'right',
+        // distance: '300px',
         duration: 500,
         delay,
         rotate: { x: 0, y: 0, z: 0 },
@@ -106,8 +106,8 @@ module.exports = {
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
     srConfigContactText: (delay = 700) => ({
-        origin: 'left',
-        distance: '150px',
+        // origin: 'left',
+        // distance: '150px',
         duration: 1000,
         delay,
         rotate: { x: 0, y: 0, z: 0 },
@@ -121,8 +121,8 @@ module.exports = {
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
     srConfigContactEmail: (delay = 1000) => ({
-        origin: 'bottom',
-        distance: '50px',
+        // origin: 'bottom',
+        // distance: '50px',
         duration: 1000,
         delay,
         rotate: { x: 0, y: 0, z: 0 },
