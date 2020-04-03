@@ -48,6 +48,10 @@ const StyledContactText = styled.p`
   @media all and (max-width: ${media.xs}) {
     width: 80%;
   }
+
+  @media all and (max-width: ${media.xxs}) {
+    font-size: ${fontSizes.sm};
+  }
 `
 
 const StyledEmail = styled.h3`
@@ -62,6 +66,10 @@ const StyledEmail = styled.h3`
   }
   @media all and (max-width: ${media.xs}) {
     font-size: 28px;
+  }
+
+  @media all and (max-width: ${media.xxs}) {
+    font-size: 26px;
   }
 `
 
@@ -130,6 +138,10 @@ const HeadlineContact = styled.h2`
     transform: none;
     margin-top: 0;
     margin-left: ${margins.md};
+  }
+
+  @media all and (max-width: ${media.xxs}) {
+    margin-left: 50px;
   }
 `
 
