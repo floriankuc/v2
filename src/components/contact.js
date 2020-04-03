@@ -12,11 +12,11 @@ const Contact = () => {
   const revealContactText = useRef(null)
   const revealContactEmail = useRef(null)
 
-  // useEffect(() => {
-  //   sr.reveal(revealContact.current, srConfigContact())
-  //   sr.reveal(revealContactText.current, srConfigContactText())
-  //   sr.reveal(revealContactEmail.current, srConfigContactEmail())
-  // }, []);
+  useEffect(() => {
+    sr.reveal(revealContact.current, srConfigContact())
+    sr.reveal(revealContactText.current, srConfigContactText())
+    sr.reveal(revealContactEmail.current, srConfigContactEmail())
+  }, []);
 
   return (
     <ContactContainer id='triggercontact'>

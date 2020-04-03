@@ -11,7 +11,7 @@ module.exports = {
         mobile: true,
         reset: false,
         useDelay: 'always',
-        viewFactor: 0.3,
+        viewFactor: 0,
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
     srConfigAboutText: (delay = 200) => ({
@@ -26,7 +26,7 @@ module.exports = {
         mobile: true,
         reset: false,
         useDelay: 'always',
-        viewFactor: 0.3,
+        viewFactor: 0,
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
     srConfigButton: (delay = 600) => ({
@@ -38,7 +38,7 @@ module.exports = {
         mobile: true,
         reset: false,
         useDelay: 'always',
-        viewFactor: 0.3,
+        viewFactor: 0,
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
 
@@ -85,7 +85,7 @@ module.exports = {
         mobile: true,
         reset: false,
         useDelay: 'always',
-        viewFactor: 0.9,
+        viewFactor: 0,
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
 
@@ -102,7 +102,7 @@ module.exports = {
         mobile: true,
         reset: false,
         useDelay: 'always',
-        viewFactor: 0.9,
+        viewFactor: 0,
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
     srConfigContactText: (delay = 700) => ({
@@ -117,7 +117,7 @@ module.exports = {
         mobile: true,
         reset: false,
         useDelay: 'always',
-        viewFactor: 0.9,
+        viewFactor: 0,
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
     srConfigContactEmail: (delay = 1000) => ({
@@ -132,7 +132,7 @@ module.exports = {
         mobile: true,
         reset: false,
         useDelay: 'always',
-        viewFactor: 0.9,
+        viewFactor: 0,
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
 
@@ -146,7 +146,7 @@ module.exports = {
         mobile: true,
         reset: false,
         useDelay: 'always',
-        viewFactor: 0.9,
+        viewFactor: 0,
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
 };
