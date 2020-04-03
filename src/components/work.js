@@ -88,8 +88,8 @@ const ProjectContainer = styled.section`
   position: relative;
   font-size: ${fontSizes.sm};
   backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
 
 
   @media all and (max-width: ${media.lg}) {
@@ -108,8 +108,6 @@ const ProjectContainer = styled.section`
     .link-icon {
       opacity: 1;
       cursor: pointer;
-
-      
     }
   }
 
@@ -174,6 +172,11 @@ const RightWrapper = styled.div`
     grid-gap: 20px;
     grid-column: 1 / 2;
     grid-row: 2 / 2;
+  }
+
+  @media all and (max-width: ${media.xxs}) {
+    grid-template-rows: repeat(4, 300px);
+
   }
 `
 
