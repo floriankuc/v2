@@ -1,7 +1,7 @@
 module.exports = {
     srConfigAbout: (delay = 100) => ({
-        origin: 'right',
-        distance: '300px',
+        // origin: 'right',
+        // distance: '300px',
         duration: 500,
         delay,
         rotate: { x: 0, y: 0, z: 0 },
@@ -15,8 +15,8 @@ module.exports = {
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
     srConfigAboutText: (delay = 200) => ({
-        origin: 'left',
-        distance: '150px',
+        // origin: 'left',
+        // distance: '150px',
         duration: 1000,
         delay,
         rotate: { x: 0, y: 0, z: 0 },
