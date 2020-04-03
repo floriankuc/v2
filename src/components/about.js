@@ -13,11 +13,11 @@ const About = () => {
   const revealAbout = useRef(null)
   const revealButton = useRef(null)
 
-  // useEffect(() => {
-  //   sr.reveal(revealAbout.current, srConfigAbout())
-  //   sr.reveal(revealAboutText.current, srConfigAboutText())
-  //   sr.reveal(revealButton.current, srConfigButton())
-  // }, [])
+  useEffect(() => {
+    sr.reveal(revealAbout.current, srConfigAbout())
+    sr.reveal(revealAboutText.current, srConfigAboutText())
+    sr.reveal(revealButton.current, srConfigButton())
+  }, [])
 
   return (
     <AboutContainer>
