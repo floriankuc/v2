@@ -50,10 +50,13 @@ const StyledLink = styled.a`
   margin-left: ${margins.md};
 
   @media all and (max-width: ${media.xs}) {
+    visibility: visible;
+
     margin-left: 50px;
   }
 
   @media all and (max-width: ${media.xxs}) {
+    visibility: visible;
     margin-left: 0;
   }
 `
@@ -103,18 +106,22 @@ const HeadlineMain = styled.h1`
   margin-bottom: ${margins.lg};
 
   @media all and (min-width: ${media.xxl}) {
+    visibility: visible;
     padding-top: ${paddings.md};
   }
 
   @media all and (max-width: ${media.xl}) {
     width: 500px;
+    visibility: hidden;
   }
 
   @media all and (max-width: ${media.lg}) {
+    visibility: visible;
     width: 400px;
   }
 
   @media all and (max-width: ${media.sm}) {
+    visibility: visible;
     width: 90%;
     margin-bottom: ${margins.md};
   }
@@ -136,6 +143,7 @@ const HeadlineAbout = styled.h2`
   transform: rotateZ(90deg);
 
   @media all and (max-width: ${media.md}) {
+    visibility: visible;
     transform: none;
     margin: 0;
     font-size: ${fontSizes.xl};
