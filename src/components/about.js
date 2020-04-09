@@ -106,7 +106,6 @@ const HeadlineMain = styled.h1`
   margin-bottom: ${margins.lg};
 
   @media all and (min-width: ${media.xxl}) {
-    visibility: visible;
     padding-top: ${paddings.md};
   }
 
