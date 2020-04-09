@@ -3,13 +3,15 @@ import styled from 'styled-components/macro'
 import Button from '../components/common/Button'
 import theme from '../styles/theme'
 import sr from '../utils/sr'
-import { srConfigButton, srConfigAboutText, srConfigAbout } from '../utils/config'
+import {
+  srConfigButton,
+  srConfigAboutText,
+  srConfigAbout,
+} from '../utils/config'
 const { paddings, margins, media, fontSizes } = theme
 
-
 const About = () => {
-
-  const revealAboutText = useRef(null);
+  const revealAboutText = useRef(null)
   const revealAbout = useRef(null)
   const revealButton = useRef(null)
 
@@ -26,12 +28,12 @@ const About = () => {
           <HeadlineMain ref={revealAboutText}>
             Hi. Ich bin Florian. Web Developer aus Hamburg.
           </HeadlineMain>
-          <StyledLink ref={revealButton} href="#contact" >
+          <StyledLink ref={revealButton} href="#contact">
             <Button text={'Schreib mir'} />
           </StyledLink>
         </Column>
       </LeftWrapper>
-      <HeadlineWrapper >
+      <HeadlineWrapper>
         <HeadlineAbout ref={revealAbout}>about</HeadlineAbout>
       </HeadlineWrapper>
     </AboutContainer>
@@ -44,6 +46,7 @@ const Column = styled.div`
 `
 
 const StyledLink = styled.a`
+  visibility: hidden;
   margin-left: ${margins.md};
 
   @media all and (max-width: ${media.xs}) {
@@ -95,6 +98,7 @@ const LeftWrapper = styled.div`
 `
 
 const HeadlineMain = styled.h1`
+  visibility: hidden;
   width: 700px;
   margin-bottom: ${margins.lg};
 
@@ -114,8 +118,6 @@ const HeadlineMain = styled.h1`
     width: 90%;
     margin-bottom: ${margins.md};
   }
-
-
 `
 
 const HeadlineWrapper = styled.div`
@@ -129,6 +131,7 @@ const HeadlineWrapper = styled.div`
 `
 
 const HeadlineAbout = styled.h2`
+  visibility: hidden;
   margin-top: ${margins.md};
   transform: rotateZ(90deg);
 
